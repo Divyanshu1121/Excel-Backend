@@ -1,11 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const OpenAI = require("openai");
 const authMiddleware = require("../middlewares/authMiddleware");
-
-const openai = new OpenAI({
-    apiKey: process.env.OPENAI_API_KEY,
-});
 
 router.post("/insight", authMiddleware, async (req, res) => {
     try {
